@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Includes tells you whether or not a given slice contains a given value
 // Performance: O(n)

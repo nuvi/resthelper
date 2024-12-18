@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 import "github.com/nuvi/unicycle/defaults"
 

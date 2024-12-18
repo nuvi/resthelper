@@ -10,6 +10,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/nuvi/go-resthelper"
 	"github.com/nuvi/unicycle/fetch"
+	"github.com/nuvi/unicycle/json_ext"
 	"github.com/nuvi/unicycle/promises"
 )
 
@@ -73,7 +74,7 @@ func TestJsonToJsonWrapper(t *testing.T) {
 	}
 	resp, err := fetch.FetchJson[testJsonStruct](rootUrl+jsonRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   fetch.JsonToReader(original),
+		Body:   json_ext.JsonToReader(original),
 	})
 	if err != nil {
 		t.Error(err)
@@ -84,7 +85,7 @@ func TestJsonToJsonWrapper(t *testing.T) {
 
 	_, err = fetch.FetchJson[testJsonStruct](rootUrl+jsonErrorRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   fetch.JsonToReader(original),
+		Body:   json_ext.JsonToReader(original),
 	})
 	assertErrorStatusCode(t, http.StatusNotFound, err)
 
@@ -148,7 +149,7 @@ func TestJsonToJsonWrapperWithHooks(t *testing.T) {
 	}
 	resp, err := fetch.FetchJson[testJsonStruct](rootUrl+jsonRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   fetch.JsonToReader(original),
+		Body:   json_ext.JsonToReader(original),
 	})
 	if err != nil {
 		t.Error(err)
@@ -159,7 +160,7 @@ func TestJsonToJsonWrapperWithHooks(t *testing.T) {
 
 	_, err = fetch.FetchJson[testJsonStruct](rootUrl+jsonErrorRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   fetch.JsonToReader(original),
+		Body:   json_ext.JsonToReader(original),
 	})
 	assertErrorStatusCode(t, http.StatusForbidden, err)
 

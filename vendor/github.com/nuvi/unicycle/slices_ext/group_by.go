@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // GroupBy accepts a slice of data and key generator function, and returns a map of keys to slices of values (i.e. grouping values by their keys).
 // Useful for optimizing lookups.

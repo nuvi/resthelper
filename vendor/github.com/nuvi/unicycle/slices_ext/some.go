@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Some accepts a slice of any data type and a test function, then returns true if at least one element in the slice passes the test.
 // Empty slices always return false.
