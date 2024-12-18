@@ -1,4 +1,4 @@
-package resthelper
+package resthelper_test
 
 import (
 	"net/http"
@@ -7,7 +7,9 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/preston-wagner/unicycle"
+	"github.com/nuvi/go-resthelper"
+	"github.com/nuvi/unicycle/fetch"
+	"github.com/nuvi/unicycle/promises"
 )
 
 type testJsonStruct struct {
@@ -15,12 +17,12 @@ type testJsonStruct struct {
 	Count int
 }
 
-func testJsonHandler(r *http.Request, input testJsonStruct) (testJsonStruct, *HttpError) {
+func testJsonHandler(r *http.Request, input testJsonStruct) (testJsonStruct, *resthelper.HttpError) {
 	return input, nil
 }
 
-func testErrorHandler(r *http.Request, input testJsonStruct) (testJsonStruct, *HttpError) {
-	return input, NewHttpErrF(http.StatusNotFound, "not found")
+func testErrorHandler(r *http.Request, input testJsonStruct) (testJsonStruct, *resthelper.HttpError) {
+	return input, resthelper.NewHttpErrF(http.StatusNotFound, "not found")
 }
 
 func TestJsonToJsonWrapper(t *testing.T) {
@@ -41,7 +43,7 @@ func TestJsonToJsonWrapper(t *testing.T) {
 		Handler:      router,
 	}
 	defer server.Close()
-	serverRunPromise := unicycle.WrapInPromise(func() (bool, error) {
+	serverRunPromise := promises.WrapInPromise(func() (bool, error) {
 		err := server.ListenAndServe()
 		return err == http.ErrServerClosed, err
 	})
@@ -52,9 +54,9 @@ func TestJsonToJsonWrapper(t *testing.T) {
 		Name:  "Steve",
 		Count: 7,
 	}
-	resp, err := unicycle.FetchJson[testJsonStruct](rootUrl+jsonRoute, unicycle.FetchOptions{
+	resp, err := fetch.FetchJson[testJsonStruct](rootUrl+jsonRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   unicycle.JsonToReader(original),
+		Body:   fetch.JsonToReader(original),
 	})
 	if err != nil {
 		t.Error(err)
@@ -63,11 +65,11 @@ func TestJsonToJsonWrapper(t *testing.T) {
 		t.Error("struct did not survive round trip")
 	}
 
-	_, err = unicycle.FetchJson[testJsonStruct](rootUrl+jsonErrorRoute, unicycle.FetchOptions{
+	_, err = fetch.FetchJson[testJsonStruct](rootUrl+jsonErrorRoute, fetch.FetchOptions{
 		Method: "POST",
-		Body:   unicycle.JsonToReader(original),
+		Body:   fetch.JsonToReader(original),
 	})
-	AssertErrorStatusCode(t, http.StatusNotFound, err)
+	resthelper.AssertErrorStatusCode(t, http.StatusNotFound, err)
 
 	server.Close()
 	ok, err := serverRunPromise.Await()

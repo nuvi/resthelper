@@ -1,8 +1,9 @@
-module github.com/preston-wagner/go-resthelper
+module github.com/nuvi/go-resthelper
 
-go 1.19
+go 1.22.2
 
-require (
-	github.com/gorilla/mux v1.8.0
-	github.com/preston-wagner/unicycle v0.2.0
-)
+toolchain go1.22.7
+
+require github.com/gorilla/mux v1.8.0
+
+require github.com/nuvi/unicycle v0.9.1
