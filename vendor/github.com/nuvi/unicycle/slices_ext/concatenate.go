@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Concatenate accepts any number of slices and copies their values into a new slice, essentially joining the slices together.
 // Performance: O(m*n)

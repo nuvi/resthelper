@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Filter accepts a slice of any data type and a filter function, then returns a slice of the data that passes the filter, preserving the original ordering
 // Performance: O(n) (assuming a constant-time filter function)

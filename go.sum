@@ -1,4 +1,6 @@
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
-github.com/nuvi/unicycle v0.9.1 h1:YZb946WFV/4T45sOWVd9bJJhYPECpfrY3tnm9Pp+0S4=
-github.com/nuvi/unicycle v0.9.1/go.mod h1:3L1jAYhdLxeGpyK8JJng+TmRek7xZGmgwmzXwV5SiJE=
+github.com/nuvi/unicycle v0.10.1 h1:9OfCw031u46RpLbveUWJ8LCmfApDLebVxN2u5UqhHhw=
+github.com/nuvi/unicycle v0.10.1/go.mod h1:MmpT9L2ViL9O+3BOvKPCbl0Ch7E5suxaPKxgnMvrnFo=
+golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c h1:7dEasQXItcW1xKJ2+gg5VOiBnqWrJc+rq0DPKyvvdbY=
+golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c/go.mod h1:NQtJDoLvd6faHhE7m4T/1IY708gDefGGjR/iUW8yQQ8=

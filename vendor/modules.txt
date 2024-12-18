@@ -1,13 +1,18 @@
 # github.com/gorilla/mux v1.8.0
 ## explicit; go 1.12
 github.com/gorilla/mux
-# github.com/nuvi/unicycle v0.9.1
-## explicit; go 1.22.2
+# github.com/nuvi/unicycle v0.10.1
+## explicit; go 1.23.2
 github.com/nuvi/unicycle/defaults
 github.com/nuvi/unicycle/error_ext
 github.com/nuvi/unicycle/fetch
+github.com/nuvi/unicycle/json_ext
 github.com/nuvi/unicycle/maps
 github.com/nuvi/unicycle/promises
 github.com/nuvi/unicycle/sets
-github.com/nuvi/unicycle/slices
+github.com/nuvi/unicycle/slices_ext
+github.com/nuvi/unicycle/string_ext
 github.com/nuvi/unicycle/types_ext
+# golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c
+## explicit; go 1.22.0
+golang.org/x/exp/constraints

@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Combinations accepts a slice of any data type, and returns a slice of slices representing all possible combinations of that type (preserving order of individual elements)
 func Combinations[INPUT_TYPE any](input []INPUT_TYPE) [][]INPUT_TYPE {

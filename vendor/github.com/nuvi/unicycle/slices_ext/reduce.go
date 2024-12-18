@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Reduce accepts a slice of data, an accumulator function, and an initial value, and applies the accumulator function to all the values of the slice, returning the accumulated data.
 // Performance: O(n) (assuming a constant-time accumulator function)

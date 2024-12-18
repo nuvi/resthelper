@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Count accepts a slice of any data type and a test function, then returns the number of elements that passed the test
 // Performance: O(n) (assuming a constant-time test function)

@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Trim returns a copy of a slice with the underlying array shrunk to match the length of the used portion, or the original if the length and capacity are already the same
 // Useful for preventing memory leaks; used internally by functions like Filter

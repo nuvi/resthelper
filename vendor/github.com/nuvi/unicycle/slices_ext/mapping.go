@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // Mapping accepts a slice of any data type and a mutator function, then returns the slice of that data with the mutator applied.
 // Performance: O(n) (assuming a constant-time mutator function)

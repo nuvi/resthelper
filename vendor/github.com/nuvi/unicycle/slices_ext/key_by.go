@@ -1,4 +1,4 @@
-package slices
+package slices_ext
 
 // KeyBy accepts a slice of data and key generator function, and returns a map correlating each value to the key the function generated.
 // In the event of key conflicts, the last value is kept.
